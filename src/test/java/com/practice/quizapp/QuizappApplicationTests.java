@@ -1,10 +1,10 @@
-package com.practice.quizapp.microservices;
+package com.practice.quizapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class QuizappApplicationTests {
 
 	@Test
 	void contextLoads() {

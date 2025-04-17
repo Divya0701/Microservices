@@ -8,10 +8,10 @@
 		<version>3.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.practice</groupId>
-	<artifactId>quizapp.microservices</artifactId>
+	<groupId>com.practice.quizapp</groupId>
+	<artifactId>quizapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>quizapp.microservices</name>
+	<name>quizapp</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -40,9 +40,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

@@ -19,8 +19,8 @@ public class QuizController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createQuiz(@RequestBody QuizDto quizDto){
-        //return quizService.createQuiz(quizDto.getNumQuestions(), quizDto.getTitle());
-        return new ResponseEntity<>("Success", org.springframework.http.HttpStatus.CREATED);
+        return quizService.createQuiz(quizDto.getNumQuestions(), quizDto.getTitle());
+        //return new ResponseEntity<>("Success", org.springframework.http.HttpStatus.CREATED);
     }
 
     @PostMapping("get/{id}")

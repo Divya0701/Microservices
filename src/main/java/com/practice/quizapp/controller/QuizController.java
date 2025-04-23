@@ -6,25 +6,21 @@ import com.practice.quizapp.entity.Response;
 import com.practice.quizapp.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/quiz")
 public class QuizController {
     @Autowired
     private  QuizService quizService;
 
-    public QuizController(QuizService quizService) {
-        this.quizService = quizService;
-    }
 
     @PostMapping("/create")
     public ResponseEntity<String> createQuiz(@RequestBody QuizDto quizDto){
-        return quizService.createQuiz(quizDto.getNumQuestions(), quizDto.getTitle());
+        //return quizService.createQuiz(quizDto.getNumQuestions(), quizDto.getTitle());
+        return new ResponseEntity<>("Success", org.springframework.http.HttpStatus.CREATED);
     }
 
     @PostMapping("get/{id}")

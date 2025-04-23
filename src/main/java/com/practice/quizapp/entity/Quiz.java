@@ -5,12 +5,12 @@ import lombok.Data;
 
 import java.util.List;
 
-@Entity
 @Data
+@Entity
 public class Quiz {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     private String title;
     @ManyToMany
     private List<Question> questionList;

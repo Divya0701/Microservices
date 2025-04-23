@@ -29,7 +29,7 @@ public class QuizServiceImpl implements QuizService{
         Quiz quiz = new Quiz();
         List<Question> questionList = questionRepository.findRandomQuestions(numQuestions);
         quiz.setTitle(title);
-       // quiz.setQuestionList(questionList);
+        quiz.setQuestionList(questionList);
         quizRepository.save(quiz);
         return new ResponseEntity<>("Success", HttpStatus.CREATED);
     }
@@ -40,13 +40,14 @@ public class QuizServiceImpl implements QuizService{
         List<Question> questionsFromDB = quiz.get().getQuestionList();
         List<QuestionWrapper> questionsForUser = new ArrayList<>();
         for(Question q: questionsFromDB){
-            QuestionWrapper qw = QuestionWrapper.builder().
-                     option_a(q.option_a)
-                    .option_b(q.option_b)
-                    .option_c(q.option_c)
-                    .option_d(q.option_d)
-                    .qustion(q.qustion)
+            QuestionWrapper qw = QuestionWrapper.builder()
+                    .option_a(q.getOption_a())
+                    .option_b(q.getOption_b())
+                    .option_c(q.getOption_c())
+                    .option_d(q.getOption_d())
+                    .qustion(q.getQustion())
                     .build();
+            questionsForUser.add(qw);
 
         }
         return new ResponseEntity<>(questionsForUser,HttpStatus.OK);

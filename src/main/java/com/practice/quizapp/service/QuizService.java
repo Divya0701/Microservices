@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public interface QuizService {
     ResponseEntity<String> createQuiz(int numQuestions, String title);
 

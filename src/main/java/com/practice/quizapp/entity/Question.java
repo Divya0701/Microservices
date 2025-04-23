@@ -13,11 +13,11 @@ public class Question {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
-    public String qustion;
-    public String option_a;
-    public String option_b;
-    public String option_c;
-    public String option_d;
-    public String answer;
+    private int id;
+    private String qustion;
+    private String option_a;
+    private String option_b;
+    private String option_c;
+    private String option_d;
+    private String answer;
 }
